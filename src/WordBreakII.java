@@ -22,9 +22,9 @@ public class WordBreakII {
 	public List<String> wordBreak(String s, Set<String> dict) {
         List<String> result = new ArrayList<String>();
         initMap(s.length());
-        for(int i=s.length(); i>0; i--){
+        for(int i=s.length(); i>0; i--){  //i = s.length(), so it won't go into the if clause below
         	if(i < s.length()&&map.get(i).isEmpty()) 
-        		continue;  //if the current index was not recorded by first iteration, means this break is not valid through the end.
+        		continue;  //if the current index was not recorded by first iteration, it means this break is not valid through the end.
         	for (int j=i-1; j>=0; j--){
             	String sub = s.substring(j, i);        	
             	if(dict.contains(sub)){
